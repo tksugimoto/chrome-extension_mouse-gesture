@@ -22,6 +22,10 @@ document.addEventListener("mousedown", evt => {
 
 document.addEventListener("contextmenu", evt => {
     if (rightButtonPressing) {
+        if (evt.clientX < 0 || evt.clientY < 0) {
+            // ウィンドウ外
+            return;
+        }
         const diffX = evt.clientX - gestureStartPosition.x;
         if (diffX < -thresholdX) {
             // 左方向へ移動：戻る
