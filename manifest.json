@@ -4,7 +4,14 @@
     "manifest_version": 2,
     "description": "右クリックメニューを押しながら左右で戻る/進む",
     "permissions": [
+        "<all_urls>"
     ],
+    "background": {
+        "scripts": [
+            "background.js"
+        ],
+        "persistent": false
+    },
     "content_scripts": [{
         "run_at": "document_start",
         "matches": [
