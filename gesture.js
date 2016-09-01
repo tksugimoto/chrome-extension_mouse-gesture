@@ -12,6 +12,7 @@ window.cancelPrevious = (function () {
     };
 
     const thresholdX = 50; // [px]
+    const thresholdY = 200; // [px]
 
     const onmousedown = evt => {
         if (evt.button === Buttons.Right) {
@@ -31,7 +32,12 @@ window.cancelPrevious = (function () {
                 return;
             }
             const diffX = evt.clientX - gestureStartPosition.x;
-            if (diffX < -thresholdX) {
+            const diffY = evt.clientY - gestureStartPosition.y;
+            if (thresholdY < diffY) {
+                chrome.runtime.sendMessage({
+                    method: "closeTab"
+                });
+            } else if (diffX < -thresholdX) {
                 // 左方向へ移動：戻る
                 evt.preventDefault();
                 window.history.back();
