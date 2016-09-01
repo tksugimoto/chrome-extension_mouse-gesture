@@ -34,6 +34,7 @@ window.cancelPrevious = (function () {
             const diffX = evt.clientX - gestureStartPosition.x;
             const diffY = evt.clientY - gestureStartPosition.y;
             if (diffY < -thresholdY) {
+                evt.preventDefault();
                 chrome.runtime.sendMessage({
                     method: "closeTab"
                 });
