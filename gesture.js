@@ -1,7 +1,4 @@
-// 2回目以降の実行の場合、以前のイベントをキャンセル
-// 開発用
-if (window.cancelPrevious) cancelPrevious();
-window.cancelPrevious = (function () {
+(function () {
     const Buttons = {
         Right: 2
     };
@@ -50,9 +47,4 @@ window.cancelPrevious = (function () {
         }
     };
     document.addEventListener("contextmenu", oncontextmenu);
-
-    return function () {
-        document.removeEventListener("mousedown", onmousedown);
-        document.removeEventListener("contextmenu", oncontextmenu);
-    };
 })();
