@@ -1,4 +1,6 @@
-(function () {
+(() => {
+	"use strict";
+
 	const Buttons = {
 		Right: 2
 	};
