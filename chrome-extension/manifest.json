@@ -1,23 +1,23 @@
 {
-    "name": "マウスジェスチャー",
-    "version": "0.1.0",
-    "manifest_version": 2,
-    "description": "右クリックメニューを押しながら左右で戻る/進む",
-    "background": {
-        "scripts": [
-            "background.js"
-        ],
-        "persistent": false
-    },
-    "content_scripts": [{
-        "run_at": "document_start",
-        "matches": [
-            "file:///*",
-            "*://*/*"
-        ],
-        "js": [
-            "gesture.js"
-        ],
-        "all_frames": true
-    }]
+	"name": "マウスジェスチャー",
+	"version": "0.1.0",
+	"manifest_version": 2,
+	"description": "右クリックメニューを押しながら左右で戻る/進む",
+	"background": {
+		"scripts": [
+			"background.js"
+		],
+		"persistent": false
+	},
+	"content_scripts": [{
+		"run_at": "document_start",
+		"matches": [
+			"file:///*",
+			"*://*/*"
+		],
+		"js": [
+			"gesture.js"
+		],
+		"all_frames": true
+	}]
 }
