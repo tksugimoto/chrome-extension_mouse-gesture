@@ -5,7 +5,7 @@
 		Right: 2
 	};
 	let rightButtonPressing = false;
-	let gestureStartPosition = {
+	const gestureStartPosition = {
 		x: 0,
 		y: 0
 	};
