@@ -49,4 +49,5 @@
 		}
 	};
 	document.addEventListener("contextmenu", oncontextmenu);
+	document.addEventListener("mouseup", oncontextmenu);
 })();
