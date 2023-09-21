@@ -14,6 +14,7 @@
 	const thresholdY = 200; // [px]
 
 	const onmousedown = evt => {
+		console.log('mousedown', evt.button);
 		if (evt.button === Buttons.Right) {
 			rightButtonPressing = true;
 			gestureStartPosition.x = evt.clientX;
@@ -25,6 +26,7 @@
 	document.addEventListener("mousedown", onmousedown);
 
 	const oncontextmenu = evt => {
+		console.log('oncontextmenu', rightButtonPressing, evt.button, gestureStartPosition);
 		if (rightButtonPressing) {
 			if (evt.clientX < 0 || evt.clientY < 0) {
 				// ウィンドウ外
@@ -32,6 +34,10 @@
 			}
 			const diffX = evt.clientX - gestureStartPosition.x;
 			const diffY = evt.clientY - gestureStartPosition.y;
+			console.log({
+				diffX,
+				diffY,
+			})
 			if (diffY < -thresholdY) {
 				evt.preventDefault();
 				chrome.runtime.sendMessage({
