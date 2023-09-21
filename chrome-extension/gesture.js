@@ -24,6 +24,9 @@
 		}
 	};
 	document.addEventListener("mousedown", onmousedown);
+	document.addEventListener("mouseup", evt => {
+		console.log('mouseup', evt.button);
+	});
 
 	const oncontextmenu = evt => {
 		console.log('oncontextmenu', rightButtonPressing, evt.button, gestureStartPosition);
