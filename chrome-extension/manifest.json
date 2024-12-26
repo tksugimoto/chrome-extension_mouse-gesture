@@ -1,13 +1,10 @@
 {
 	"name": "Mouse gesture",
 	"version": "0.1.0",
-	"manifest_version": 2,
+	"manifest_version": 3,
 	"description": "マウスジェスチャー機能追加: 右クリックメニューを押しながら左右で戻る/進む, 上でタブを閉じる",
 	"background": {
-		"scripts": [
-			"background.js"
-		],
-		"persistent": false
+		"service_worker": "background.js"
 	},
 	"content_scripts": [{
 		"run_at": "document_start",
